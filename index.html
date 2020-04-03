@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="form-container">
+            <div class="image">
+                <div class="formLast">
+                    <form id="jsonFile" name="jsonFile" enctype="multipart/form-data" method="post">
+
+                        <fieldset>
+                            <h1 style="    font-family: 'Ubuntu Mono', monospace;
+                            ">Package.json 2 command </h1>
+                            <div class="new_Btn">Select</div><br>
+                            <input type='file' id='fileinput'>
+                            <input type='button' id='btnLoad' value='Load' onclick='loadFile();'>
+                        </fieldset>
+
+
+
+                    </form>
+                </div>
+                <div class="desc">
+                    <h3>Convert your package.json file <br> to command for npm installation</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container-text">
+
+            <div class="navbar">
+
+                <span class="dot">◻</span>
+                <span class="dot">─</span>
+                <span class="dot" style="background: linear-gradient(#f37458 0%, #de4c12 100%);">✕</span>
+
+            </div>
+            <div class="text" id="text">
+                <div class="span-cont">
+                    <span style="color: #87d441;">user@ubuntu:</span><span
+                        style="color: blue;">~/Desktop/nodejs</span><span style="color:white;">$</span> <span
+                        id="spanText"></span><span class="Prompt__cursor"></span></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.new_Btn').bind("click", function () {
+            $('#fileinput').click();
+        });
+
+        function loadFile() {
+            var input, file, fr;
+
+            if (typeof window.FileReader !== 'function') {
+                alert("The file API isn't supported on this browser yet.");
+                return;
+            }
+
+            input = document.getElementById('fileinput');
+
+            if (!input) {
+                alert("Um, couldn't find the fileinput element.");
+            }
+            else if (!input.files) {
+                alert("This browser doesn't seem to support the `files` property of file inputs.");
+            }
+            else if (!input.files[0]) {
+                alert("Please select a file before clicking 'Load'");
+            }
+            else {
+                file = input.files[0];
+                fr = new FileReader();
+                fr.onload = receivedText;
+                fr.readAsText(file);
+            }
+
+            function receivedText(e) {
+                let lines = e.target.result;
+                var newArr = JSON.parse(lines);
+                console.log(newArr.dependencies)
+                makeString(newArr.dependencies)
+            }
+
+            function makeString(array) {
+                let string = " npm install ";
+                let i = 0;
+                for (const element of Object.keys(array)) {
+
+                    console.log(element);
+                    string = string.concat(element + " ")
+                    console.log(string);
+                    i++;
+                    console.log(i);
+                    console.log(Object.keys(array).length);
+
+                    if (i == Object.keys(array).length) {
+                        document.getElementById('spanText').innerHTML = string;
+                    }
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

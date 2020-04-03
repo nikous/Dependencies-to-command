@@ -1,0 +1,36 @@
+{
+  "name": "package.json_to_npm-install",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajax": "0.0.4",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "css-element-queries": "^1.2.3",
+    "dotenv": "^8.2.0",
+    "easytimer.js": "^4.1.1",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.0",
+    "http": "0.0.1-security",
+    "iconv": "^2.3.5",
+    "jQuery": "^1.7.4",
+    "jquery": "^3.4.1",
+    "jsdom": "^16.2.2",
+    "local": "^0.3.3",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.7",
+    "node-fetch": "^2.6.0",
+    "nodemailer": "^6.4.6",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "socket.io": "^2.3.0"
+  }
+}
