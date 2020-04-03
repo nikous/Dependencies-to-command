@@ -136,6 +136,7 @@ fieldset{
 
   }
 .span-cont{
+    word-wrap: break-word;
     margin-top: 0.4rem;
     margin-left: 0.2rem;
 }
