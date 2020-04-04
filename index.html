@@ -35,6 +35,8 @@
         <div class="container-text">
 
             <div class="navbar">
+                <button id="copyBtn" onclick="copyText()">Copy </button>
+
                 <span class="dot">─</span>
                 <span class="dot">◻</span>
                 <span class="dot" style="background: linear-gradient(#f37458 0%, #de4c12 100%);">✕</span>
@@ -46,12 +48,24 @@
                         style="color: blue;">~/Desktop/nodejs</span><span style="color:white;">$</span> <span
                         id="spanText"></span><span class="Prompt__cursor"></span></div>
             </div>
+
         </div>
     </div>
     <script type="text/javascript">
         $('.new_Btn').bind("click", function () {
             $('#fileinput').click();
         });
+
+        function copyText() {
+
+            var copyText = document.getElementById("spanText")
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+        }
 
         function loadFile() {
             var input, file, fr;
@@ -103,6 +117,10 @@
                     }
 
                 }
+
+                document.getElementById("copyBtn").style.opacity = "1";
+                document.getElementById("spanText").style.opacity = "1";
+
             }
         }
     </script>

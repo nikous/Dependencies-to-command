@@ -120,7 +120,7 @@ fieldset{
      word-wrap: break-word;
      color:white;
      font-family: 'Ubuntu Mono', monospace;
-     font-size: 1.1rem;
+     font-size: 1.2rem;
 }
 .dot {
     display: flex;
@@ -142,13 +142,14 @@ fieldset{
     word-wrap: break-word;
     margin-top: 0.4rem;
     margin-left: 0.2rem;
+    
 }
 .Prompt__cursor {
-    height: 17px;
+    height: 16px;
     width: 8px;
     background: white;
+    
     display:inline-block;
-    /* position: absolute; */
     margin-left: 5px;
     animation: 500ms ease infinite alternate blink;
    
@@ -190,3 +191,28 @@ fieldset{
   ::-webkit-scrollbar:hover {
     width: 10px;
   }
+
+  #copyBtn{
+      margin-right: 20px;
+      background:transparent;
+     
+      border:0;
+      font-family: 'Ubuntu Mono', monospace;
+      font-size: 1.2rem;
+      color:white;
+      opacity:0;
+      transition: opacity 1s;
+  }
+
+  #spanText{
+      opacity:0;
+    transition: opacity 1s;
+
+  }
+
+  #copyBtn:focus{
+     
+  
+    outline-width: 0;
+    color:#bbb;
+}
