@@ -148,8 +148,8 @@ fieldset{
     width: 8px;
     background: white;
     display:inline-block;
-    position: absolute;
-    margin-left: 8px;
+    /* position: absolute; */
+    margin-left: 5px;
     animation: 500ms ease infinite alternate blink;
    
 }
@@ -163,3 +163,30 @@ fieldset{
     }
   }
   
+  /* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: rgba(56, 4, 40, .9);
+    border-radius: 0px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(233, 85, 27); 
+    border-radius: 0px;
+    height: 60px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f56a3f; 
+  
+  }
+
+  ::-webkit-scrollbar:hover {
+    width: 10px;
+  }
