@@ -2,6 +2,7 @@ body,html{
     width: 100vw;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 main-container{
@@ -115,7 +116,8 @@ fieldset{
      width:50%;
      height:80%;
      background: rgba(56, 4, 40, .9);
-  
+     overflow-y: auto;
+     word-wrap: break-word;
      color:white;
      font-family: 'Ubuntu Mono', monospace;
      font-size: 1.1rem;
@@ -136,6 +138,7 @@ fieldset{
 
   }
 .span-cont{
+    overflow-y: auto;
     word-wrap: break-word;
     margin-top: 0.4rem;
     margin-left: 0.2rem;
