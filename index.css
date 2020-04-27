@@ -16,14 +16,14 @@ form{
     color:white ;
 }
 .new_Btn {
-    
+    color:black;
     border-radius: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
    width: 120px;
    height: 35px;
-   background-color: black;
+   background-color: rgb(245, 243, 243);
    cursor: pointer;
    font-family: 'Ubuntu Mono', monospace;
    font-size: 1.1rem;
@@ -36,9 +36,9 @@ form{
         align-items: center;
        width: 120px;
        height: 35px;
-       background-color: black;
+       background-color: rgb(245, 243, 243);
        cursor: pointer; 
-       color: white;
+       color: black;
        border: 0;
        font-family: 'Ubuntu Mono', monospace;
        font-size: 1.1rem;
@@ -96,7 +96,7 @@ fieldset{
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: gray;
+    background-color: rgb(233, 233, 233);
     height: 60%;
 }
 .navbar{
